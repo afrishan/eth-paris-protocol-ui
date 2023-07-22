@@ -18,6 +18,7 @@
     "@biconomy/paymaster": "^3.0.0-alpha.0",
     "@biconomy/web3-auth": "^3.0.0-alpha.0",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@sismo-core/sismo-connect-react": "^0.0.20",
     "ethers": "^6.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

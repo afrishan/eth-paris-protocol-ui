@@ -4,23 +4,5 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 
 export default defineConfig({
   plugins: [react()],
-  optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: "globalThis",
-      },
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-            buffer: true
-        })
-    ]
-    },
-  },
-  resolve: {
-    alias: {
-      process: "process/browser",
-      stream: "stream-browserify",
-      util: "util",
-    },
-  },
+  
 });
