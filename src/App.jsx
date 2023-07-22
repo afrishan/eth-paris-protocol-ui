@@ -1,14 +1,10 @@
 import './App.css'
 import React from 'react' 
-import { EmploymentProof } from './components/EmploymentProof.jsx'
-
+import MySismoConnectButton from './component/EmploymentProof'
 
 function App() {
   return (
-    <div className="App">
-      <EmploymentProof />
-    </div>
-    
+      <MySismoConnectButton />
   )
 }
 
