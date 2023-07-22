@@ -1,8 +1,50 @@
-# React + Vite
+# React dApp (with v2 UniversalProvider + Ethers.js)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live dapp demo - https://react-dapp-v2-with-ethers.vercel.app <br />
+🔗 Live wallet demo - https://react-wallet.walletconnect.com/ <br />
+📚 WalletConnect v2 Docs - https://docs.walletconnect.com/2.0
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is an example implementation of a React dApp (generated via `create-react-app`) using the v2 [`UniversalProvider`](https://github.com/WalletConnect/walletconnect-monorepo/tree/v2.0/providers/universal-provider) together with [`Ethers.js`](https://docs.ethers.io/v5/) to:
+
+- handle pairings
+- manage sessions
+- send JSON-RPC requests to a paired wallet
+
+## Running locally
+
+Install the app's dependencies:
+
+```bash
+yarn
+```
+
+Set up your local environment variables by copying the example into your own `.env.local` file:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Your `.env.local` now contains the following environment variables:
+
+- `NEXT_PUBLIC_PROJECT_ID` (placeholder) - You can generate your own ProjectId at https://cloud.walletconnect.com
+- `NEXT_PUBLIC_RELAY_URL` (already set)
+
+## Develop
+
+```bash
+yarn dev
+```
+
+## Test
+
+```bash
+yarn test
+```
+
+## Build
+
+```bash
+yarn build
+```

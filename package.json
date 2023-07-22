@@ -1,38 +1,82 @@
 {
-  "name": "eth-paris-protocol-ui",
+  "name": "react-dapp-v2-with-ethers",
+  "version": "2.0.0-beta.26",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "keywords": [
+    "walletconnect",
+    "ethereum",
+    "web3",
+    "crypto"
+  ],
+  "author": "WalletConnect, Inc. <walletconnect.com>",
+  "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --check '**/*.{js,ts,jsx,tsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walletconnect/walletconnect-monorepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/walletconnect/walletconnect-monorepo/issues"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.11"
   },
   "dependencies": {
-    "@biconomy/account": "^3.0.0-alpha.0",
-    "@biconomy/bundler": "^3.0.0-alpha.0",
-    "@biconomy/common": "^3.0.0-alpha.0",
-    "@biconomy/core-types": "^3.0.0-alpha.0",
-    "@biconomy/node-client": "^3.0.0-alpha.0",
-    "@biconomy/paymaster": "^3.0.0-alpha.0",
-    "@biconomy/web3-auth": "^3.0.0-alpha.0",
-    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
-    "@sismo-core/sismo-connect-react": "^0.0.20",
-    "ethers": "^6.6.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup-plugin-polyfill-node": "^0.12.0",
-    "stream-browserify": "^3.0.0"
+    "@ethereumjs/tx": "^3.5.0",
+    "@walletconnect/encoding": "^1.0.2",
+    "@walletconnect/types": "^2.7.6",
+    "@walletconnect/universal-provider": "^2.7.6",
+    "@walletconnect/utils": "^2.7.6",
+    "@web3modal/standalone": "^2.3.7",
+    "axios": "^0.21.1",
+    "blockies-ts": "^1.0.0",
+    "caip-api": "^2.0.0-beta.1",
+    "cosmos-wallet": "^1.1.0",
+    "eth-sig-util": "^2.5.3",
+    "ethereumjs-util": "^7.0.6",
+    "ethers": "5.7.2",
+    "next": "12.2.4",
+    "prop-types": "^15.7.2",
+    "qr-image": "^3.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "styled-components": "^5.2.0",
+    "typescript": "^4.3.2",
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5"
-  }
+    "@babel/preset-env": "^7.19.4",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/bn.js": "^5.1.0",
+    "@types/eth-sig-util": "^2.1.1",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.14",
+    "@types/pino": "^7.0.5",
+    "@types/prop-types": "^15.7.4",
+    "@types/qr-image": "^3.2.5",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.21",
+    "prettier": "^2.5.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }
