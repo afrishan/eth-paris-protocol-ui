@@ -4,19 +4,11 @@ import { SismoConnectButton, AuthType } from "@sismo-core/sismo-connect-react";
 
 import useContract from "../utils/useContract";
 import { goerli } from "wagmi/chains";
-import { WagmiConfig, createConfig, mainnet } from 'wagmi'
 import { createPublicClient, http } from 'viem'
 
-const configWagmi = createConfig({
-  autoConnect: true,
-  publicClient: createPublicClient({
-    chain: goerli,
-    transport: http()
-  }),
-})
- 
-
 const CHAIN = goerli;
+
+
 const MySismoConnectButton = () => {
   const [responseBytes, setResponseBytes] = useState(null);
   // Configurations for SismoConnect
@@ -27,41 +19,39 @@ const MySismoConnectButton = () => {
     },
   };
 
-  const { airdropContract, waitingForTransaction } = useContract({
-    responseBytes,
-    chain: CHAIN,
-  });
+  // const { parityContract, waitingForTransaction } = useContract({
+  //   responseBytes,
+  //   chain: CHAIN,
+  // });
 
-  // Callback function for when SismoConnect responds with proofs
-  const handleResponse = async (response) => {
-    // Send the response to your server to verify it
-    // using the @sismo-core/sismo-connect-server package
-    // write.doSomethingUsingSismoConnect
-  };
+  // // Callback function for when SismoConnect responds with proofs
+  // const handleResponse = async (response) => {
+  //   // Send the response to your server to verify it
+  //   // using the @sismo-core/sismo-connect-server package
+  //   // write.doSomethingUsingSismoConnect
+  // };
 
   // Callback function for when SismoConnect responds with bytes
   const handleResponseBytes = async (bytes) => {
-    try {
-      //Write in the smart contract the hash of the bytes
-      const hash = await airdropContract.write.doSomethingUsingSismoConnect([
-        responseBytes,
-        address,
-      ]);
-      let twReceipt = await waitingForTransaction(hash);
-      if (twReceipt?.status === "success") {
-        console.log("transaction success");
-      } else {
-        console.log("transaction failed");
-      }
-    } catch (e) {
-      console.log(e);
-    }
+    console.log("bytes",bytes);
+    // try {
+    //   const hash = await parityContract.write.doSomethingUsingSismoConnect([
+    //     responseBytes,
+    //     address,
+    //   ]);
+    //   let twReceipt = await waitingForTransaction(hash);
+    //   if (twReceipt?.status === "success") {
+    //     console.log("transaction success");
+    //   } else {
+    //     console.log("transaction failed");
+    //   }
+    // } catch (e) {
+    //   console.log(e);
+    // }
   };
 
   return (
     <>
-    <WagmiConfig config={configWagmi}>
-
       {/* First SismoConnectButton */}
       <SismoConnectButton
         config={config}
@@ -81,7 +71,6 @@ const MySismoConnectButton = () => {
         // onResponse={handleResponse}
         onResponseBytes={handleResponseBytes}
         />
-        </WagmiConfig>
     </>
   );
 };

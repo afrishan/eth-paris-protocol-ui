@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Chain,
   GetContractReturnType,
@@ -7,7 +7,7 @@ import {
   WalletClient,
   getContract,
 } from "viem";
-import { useAccount, useNetwork, useSwitchNetwork, useWalletClient } from "wagmi";
+import { useWalletClient } from "wagmi";
 import { waitForTransaction, getPublicClient } from "@wagmi/core";
 import ParityABI from "./abi/ParityABI.json";
 
@@ -16,26 +16,19 @@ import { fundMyAccountOnLocalFork } from "./fundMyAccountOnLocalFork";
 
 export type ContractClaim = {
   parityContract: GetContractReturnType<typeof ParityABI, PublicClient, WalletClient>;
-  switchNetworkAsync: ((chainId?: number | undefined) => Promise<Chain>) | undefined;
   waitingForTransaction: (hash: `0x${string}`) => Promise<TransactionReceipt | undefined>;
   error: string;
 };
 
 export default function useContract({
-  responseBytes,
   chain,
 }: {
   responseBytes: string | null;
   chain: Chain;
 }): ContractClaim {
   const [error, setError] = useState<string>("");
-  const { chain: currentChain } = useNetwork();
-  const { switchNetworkAsync } = useSwitchNetwork();
   const publicClient = getPublicClient();
   const { data: walletClient } = useWalletClient();
-  const { isConnected, address } = useAccount({
-    onConnect: async ({ address }) => address && (await fundMyAccountOnLocalFork(address)),
-  });
 
   const ParityContract = getContract({
     address: '0x06d7ba58bb20349a2dc186c635512e390213bfd1',
@@ -67,7 +60,6 @@ export default function useContract({
 
   return {
     parityContract: ParityContract,
-    switchNetworkAsync,
     waitingForTransaction,
     error,
   };
