@@ -92,6 +92,7 @@ function App() {
 
   return (
     <div>
+      <EmploymentProof/>
     <h1> Biconomy Smart Accounts using social login + Gasless Transactions</h1>
 
     {
