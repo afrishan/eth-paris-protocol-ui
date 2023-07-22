@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react' 
-import { EmploymentProof } from './components/EmploymentProof.jsx'
+import EmploymentProof from './component/EmploymentProof'
 
 
 function App() {

@@ -8,18 +8,18 @@ import {
 
 const MySismoConnectButton = () => {
   // Configurations for SismoConnect
-  const config: SismoConnectConfig = {
+  const config = {
     appId: '0xf4977993e52606cfd67b7a1cde717069',
   };
 
   // Callback function for when SismoConnect responds with proofs
-  const handleResponse = async (response: SismoConnectResponse) => {
+  const handleResponse = async (response) => {
     // Send the response to your server to verify it
     // using the @sismo-core/sismo-connect-server package
   };
 
   // Callback function for when SismoConnect responds with bytes
-  const handleResponseBytes = async (bytes: string) => {
+  const handleResponseBytes = async (bytes) => {
     // Send the response to your contract to verify it
     // using the @sismo-core/sismo-connect-solidity package
   };
