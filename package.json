@@ -23,7 +23,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-polyfill-node": "^0.12.0",
-    "stream-browserify": "^3.0.0"
+    "stream-browserify": "^3.0.0",
+    "viem": "^1.4.0",
+    "wagmi": "^1.3.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
